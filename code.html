@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Jesse Chase</title>
+    <title>REWIND: A Coding Project By Jesse Chase</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,7 +24,7 @@
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="/img/toplogo.png" alt="Jesse Chase Logo" height="40" class="d-inline-block alight-text-top"> | APP NAME</a>
+        <a class="navbar-brand" href="#"><img src="/img/toplogo.png" alt="Jesse Chase Logo" height="40" class="d-inline-block alight-text-top"> | REWIND</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -56,20 +56,68 @@
     <div class="mt-5"><h1></h1></div>
     <div class="container py-4 px-5 mt-5">
         <div class="mt-4"><h1></h1></div>
-        <h2 class="border-1 border-bottom border-dark">The Code for APP NAME</h2>
+        <h2 class="border-1 border-bottom border-dark">The Code for REWIND</h2>
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="col col-lg-8">
                 <pre class="line-numbers"><code class="language-javascript">
-                    // Call Hello World
-                    function HelloWorld() {
-                    alert("Hello World!");
-}
+                    // Retrieve user input
+                    // Controller function
+                    function getString() {
+                    
+                        document.getElementById("alert").classList.add("invisible");
+                    
+                        let userInput = document.getElementById("userString").value;
+                    
+                        let reversedString = reverseString(userInput);
+                    
+                        displayString(reversedString);
+                    
+                    }
+                    
+                    // Reverse the string
+                    // Logic function
+                    function reverseString(userInput) {
+                    
+                        let characters = [];
+                    
+                        // Reverse the string using a for loop
+                    
+                        for (let i = userInput.length - 1; i >=0; i--)
+                        {
+                            characters += userInput[i];
+                        }
+                    
+                        return characters;
+                    
+                    }
+                    
+                    // Display the result
+                    // View function
+                    function displayString(reversedString) {
+                    
+                        // Write to the page
+                        document.getElementById("msg").innerHTML = `Your string reversed is: ${reversedString}`;
+                    
+                        // Show the alert box
+                        document.getElementById("alert").classList.remove("invisible");
+                    }
                 </code></pre>
             </div>
-            <div class="col col-lg-4">
-                <p>The code is structured in one function.</p>
-                <h5>Hello World</h5>
-                <p>Hello World is a funciton that displays an alert with the message of "Hello World"</p>
+            <div class="col col-lg-4 mt-2">
+                <h5>getString()</h5>
+                <p>This is the controller function that will call the other functions I defined to help
+                    make the code easier to read. First, it ensures that the alert box is hidden. Then, it gets the <i>userString</i> and assigns
+                    it to the variable <i>userInput</i>. After that, it calls <b>reverseString()</b> with <i>userInput</i> as the argument, and assigns the result to the variable <i>reversedString</i>.
+                    Finally, it calls <b>displayString()</b> with <i>reversedString</i> as its argument.
+                </p>
+                <h5>reverseString()</h5>
+                <p>
+                    First, this function declares an array named <i>characters</i>. This array will store each individual character from the string <i>userInput</i>. 
+                    Then, using a for loop, I iterate through <i>userInput</i> starting from the last character, and on each iteration it adds that character to the array <i>characters</i>. 
+                    Once the loop is finished, we return the array.
+                </p>
+                <h5>displayString()</h5>
+                <p>This function takes the <i>reversedString</i> variable and modifies the DOM to show the alert box with a message and the result.</p>
             </div>
 
         </div>
